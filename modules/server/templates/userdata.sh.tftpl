@@ -118,6 +118,12 @@ cat > "/etc/nginx/sites-available/$API_GRPC_FQDN_TF" <<'NGINXEOF'
 server {
     server_name api-grpc.letraz.app;
 
+    # Enable HTTP/2 (new syntax)
+    http2 on;
+
+    # Use modern directive for header buffers instead of deprecated http2_max_*
+    large_client_header_buffers 4 16k;
+
     # gRPC configuration for HTTPS
     location / {
         grpc_pass grpc://127.0.0.1:50051;
