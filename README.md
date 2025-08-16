@@ -2,6 +2,10 @@
 
 This Terraform configuration manages the complete Letraz infrastructure on DigitalOcean, including both server and utilities components.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Architecture
 
 The infrastructure is organized into two main modules:
