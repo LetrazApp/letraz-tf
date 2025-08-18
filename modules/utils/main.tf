@@ -67,6 +67,8 @@ resource "digitalocean_droplet" "utils" {
     bucket_cdn_endpoint         = length(digitalocean_cdn.bucket_cdn) > 0 ? digitalocean_cdn.bucket_cdn[0].endpoint : ""
     bucket_access_key_id        = var.spaces_access_key_id
     bucket_access_key_secret    = var.spaces_access_key_secret
+    bucket_name                 = length(digitalocean_spaces_bucket.bucket) > 0 ? digitalocean_spaces_bucket.bucket[0].name : ""
+    bucket_region               = var.spaces_region
     github_username             = var.github_username
     github_token                = var.github_token
   })

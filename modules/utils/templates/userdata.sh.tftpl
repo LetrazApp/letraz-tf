@@ -15,6 +15,8 @@ BUCKET_URL_TF='${bucket_url}'
 BUCKET_CDN_TF='${bucket_cdn_endpoint}'
 BUCKET_AKID_TF='${bucket_access_key_id}'
 BUCKET_AKSEC_TF='${bucket_access_key_secret}'
+BUCKET_NAME_TF='${bucket_name}'
+BUCKET_REGION_TF='${bucket_region}'
 GITHUB_USER_TF='${github_username}'
 GITHUB_TOKEN_TF='${github_token}'
 
@@ -83,6 +85,8 @@ fi
   [ -n "$BUCKET_CDN_TF" ]  && echo "BUCKET_CDN_ENDPOINT=$BUCKET_CDN_TF"
   [ -n "$BUCKET_AKID_TF" ] && echo "BUCKET_ACCESS_KEY_ID=$BUCKET_AKID_TF"
   [ -n "$BUCKET_AKSEC_TF" ] && echo "BUCKET_ACCESS_KEY_SECRET=$BUCKET_AKSEC_TF"
+  [ -n "$BUCKET_NAME_TF" ] && echo "BUCKET_NAME=$BUCKET_NAME_TF"
+  [ -n "$BUCKET_REGION_TF" ] && echo "BUCKET_REGION=$BUCKET_REGION_TF"
 } >> "$ENV_PATH_TF"
 chown "$USER_NAME:$USER_NAME" "$ENV_PATH_TF"
 chmod 600 "$ENV_PATH_TF"
